@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<a href="{{ url_for('index') }}">&larr; Return</a>
+<ul>
+{% for movie in movies %}
+    <li>{{ movie.name }} - {{ movie.year }}</li>
+{% endfor %}
+</ul>
+
+<form action="{{ url_for('add_movies') }}" method="post">
+        <table>
+            <tbody>
+                <tr>
+                    <td>电影名称:</td>
+                    <td><input type="text" placeholder="请输入要添加的电影名称" name="name"></td>
+                </tr>
+                <tr>
+                    <td>年份:</td>
+                    <td><input type="text" placeholder="请输入电影年份" name="year"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="添加电影"></td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </form>
+</body>
+</html>
